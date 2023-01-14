@@ -6,6 +6,8 @@ const url = config.MONGODB_URI
 
 logger.info("Connecting to database...")
 
+mongoose.set("strictQuery", false);
+
 mongoose
   .connect(url)
   .then(() => {
