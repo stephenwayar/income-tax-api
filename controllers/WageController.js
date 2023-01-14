@@ -31,6 +31,13 @@ const create_wage = async (req, res, next) => {
     })
   }
 
+  if (!req.body.name) {
+    logger.info('name field is missing')
+    return res.status(401).json({
+      error: 'Wage name is required'
+    })
+  }
+
   const { name, minimum_wage } = req.body
 
   try{

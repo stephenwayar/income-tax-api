@@ -2,6 +2,8 @@ const api = require('../helpers/api')
 const logger = require('../../utils/logger')
 const mongoose = require('mongoose')
 
+// Run tests individually. use test.only()
+
 describe('Auth-login', () => {
   test('login user with right credentials', async () => {
     const user = {
@@ -17,7 +19,7 @@ describe('Auth-login', () => {
       .expect(200)
   }, 50000)
 
-  test.only('attempt login with wrong credentials', async () => {
+  test('attempt login with wrong credentials', async () => {
     const user = {
       email: 'stephenbuluswayar@gmail.com',
       password: 'wrongpassword'
